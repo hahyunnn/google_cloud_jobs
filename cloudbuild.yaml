@@ -5,6 +5,11 @@ substitutions:
   _REGION: asia-northeast1
   _REPO: jobs-lab
   _IMAGE: prime-lab
+
+options:
+  logging: CLOUD_LOGGING_ONLY           # ← 에러 조건 (c) 만족
+  # 필요시 아래처럼 regional user-owned bucket 정책을 동시에 쓸 수도 있습니다.
+  # defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
 steps:
   - name: 'gcr.io/cloud-builders/docker'
     args:
